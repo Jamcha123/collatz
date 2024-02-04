@@ -1,21 +1,19 @@
-export function isPrime(num){
-    const primes = []
-    for(let i = 1; i != num+1; i++){
-        const checkPrimes = []
-        if(Number.isInteger(num / i) == true){
-            for(let j = 1; j != i+1; j++){
-                if(Number.isInteger(i / j) == true){
-                    checkPrimes.push(j)
-                }
-            }
-            if(checkPrimes.length == 2){
-                primes.push(i)
-            }
+export function getCollatz(num){
+    if(Number.isInteger(num) == false){
+        throw new Error("Not a number");
+    }
+    let target = num;
+    const chains = []
+    while(target != 1){
+        chains.push(target)
+        if (Math.floor(target / 2) == target / 2){
+            target = target / 2
+        }else{
+            target = (3 * target) + 1
         }
     }
-    if(primes.length >= 1){
-        console.log("primes factors of " + num + " are " + primes)
-    }else{
-        console.log("primes factors of " + num + " are " + 0)
-    }
+    chains.push(1)
+    chains.forEach((e) => {
+        console.log(e)
+    })
 }

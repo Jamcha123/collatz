@@ -1,15 +1,14 @@
-factor.js finds all of the prime factors in a given number.
-numbers above or equal to 9 digits cause a significant drop in performence.
+This package gets the collatz sequence of a given number 
 
-How to use:
-first:
+first step:
+``` 
+    npm i collatz.js 
 ```
-    npm i divisable-primes
-```
-second:
-```
-    import {isPrime} from 'factor.js'
-    isPrime(<any integer>)
-```
-third:
-enjoy the primes
+
+second step:
+``` 
+    import {getCollatz} from './index.js'
+    getCollatz(<integer>)
+``` 
+third step:
+find a solution to the collatz problem
